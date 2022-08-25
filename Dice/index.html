@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Roll the dice</h1>
+
+    <p>Guess the category that is going to win this year</p>
+
+    <button id = "Btn" type="button" >Roll dice</button>
+
+
+    <script>
+        const categories = ["Best Consumer Solution", "Best Enterprise Solution", "Best African Solution", 
+                        "Most Innovative Solution", "Best Gaming Solution", "Best Health Solution",]
+
+        const myBtn = document.getElementById("Btn");
+        let guess = Math.floor(Math.random() * categories.length)
+        let diceRoll = Math.floor(Math.random() * categories.length)
+
+        myBtn.addEventListener("click", function(e){
+            const roll = alert("My guess:\n" + categories[guess]);
+
+            if (diceRoll == guess){
+                document.body.innerHTML = "We got it right, the answer is " + categories[diceRoll]
+            } 
+            else {
+                document.body.innerHTML ="We got it wrong, the answer is " + categories[diceRoll]
+            }
+        })
+        
+    </script>
+</body>
+</html>
